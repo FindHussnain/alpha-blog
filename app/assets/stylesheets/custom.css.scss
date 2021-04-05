@@ -22,7 +22,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 440px;
+	height: 424px;
 }
 html, body {
   height: 100%;
@@ -30,6 +30,7 @@ html, body {
 
 #page-content {
   flex: 1 0 auto;
+  background-color: lightgrey;
 }
 
 #sticky-footer {

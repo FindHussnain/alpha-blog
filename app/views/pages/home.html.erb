@@ -4,23 +4,22 @@
 	<title>Home</title>
 </head>
 <body>
-	<!-- <div class="container" id="home-container">
-		<div class="jumbotron text-center text-white" >
-		  <h1 class="display-4">Alpha Blog</h1>
-		  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-		  <hr class="my-4">
-		  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-		  <p class="lead">
-		    <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
-		  </p>
+	<div id="page-content">
+		<div class="container" id="home-container">
+			<div class="jumbotron text-center text-white" >
+			  <h1 class="display-4">Alpha Blog</h1>
+			  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+			  <hr class="my-4">
+			  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+			  <p class="lead">
+			    <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
+			  </p>
+			</div>
 		</div>
-	</div> -->
-	<div id="page-content"></div>
-	<%= link_to 'Articles Listing', articles_path %> | 
-	<%= link_to 'About Page', about_path%>
+	</div>
 	<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
     	<div class="container text-center">
-      	<small>Copyright &copy; Your Website</small>
+      	<small>Copyright &copy; My Website <%= link_to "admin", "https://its-alpha-blog.herokuapp.com/", class: "text-white" %> </small>
     	</div>
   	</footer>
 </body>
