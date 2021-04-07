@@ -1,9 +1,8 @@
-<div id="page-content">
-	<h1 class="text-center mt-4">Listing all articles</h1>
+	<h1 class="text-center mt-2">Listing all articles</h1>
 	<div class="container">
 		<% @articles.each do |article| %>
 			<div class="row justify-content-center">
-				<div class="col-8 mt-4 ">
+				<div class="col-8 mt-3 ">
 					<div class="card text-center shadow mb-5 bg-white rounded">
 					  <div class="card-header font-italic">
 					    by: Admin
@@ -24,13 +23,3 @@
 			</div>
 		<% end %>
 	</div>
-</div>
-
-
-
-
-
-<!-- <td><%#= link_to 'Show', article_path(article.id) %></td>
-				<td><%#= link_to 'Edit', edit_article_path(article.id) %></td>
-				<td><%#= link_to 'Delete', article_path(article.id), method: :delete, data: {confirm: "Are you sure? "} %></td>
-<%#= link_to 'Create Article', new_article_path%> -->
