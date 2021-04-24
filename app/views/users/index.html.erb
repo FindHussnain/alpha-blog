@@ -18,7 +18,14 @@
 				    	<%= pluralize(user.articles.count, "article") %>
 				    </p>
 					<%= link_to "View profile", user_path(user), class: "btn btn-outline-info" %>
-				    <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-success"%>
+					<% if logged_in? %>
+					  <% if user == current_user %>
+				    	<%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-success"%>
+				      	<% end %>
+				      <% if current_user.admin? || user == current_user%>
+				    	<%= link_to "Delete profile", user_path(user), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure you want to delete the user account and all associated accounts?"} %>
+				      <% end %>
+				    <% end %>
 					<%#= link_to "delete", user_path(user), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-outline-danger"%>
 				  </div>
 				  <div class="card-footer text-muted">

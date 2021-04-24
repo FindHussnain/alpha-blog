@@ -5,18 +5,19 @@
 					<div class="card text-center shadow mb-5 bg-white rounded">
 					  <div class="card-header font-italic">
 					  	<% if @article.user %>
-					    by: <%= link_to @article.user.username, user_path(@article.user) %>
-					    <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+					    	by: <%= @article.user.username %>
+					    	<%= link_to gravatar_for(@article.user), user_path(@article.user) %>
 					    <% end %>
 					  </div>
 					  <div class="card-body">
 					    <div class="card-text text-left"><%= simple_format(@article.description) %></div>
-					    <%= link_to "edit", edit_article_path(@article), class: "btn btn-outline-success"%>
-						<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-outline-danger"%>
+					    <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+					    	<%= link_to "edit", edit_article_path(@article), class: "btn btn-outline-success"%>
+							<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-outline-danger"%>
+						<% end %>
 					  </div>
 					  <div class="card-footer text-muted">
-					    <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
-					    Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+					    <small>Created <%= time_ago_in_words(@article.created_at) %> ago, Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
 					  </div>
 					</div>
 				</div>
